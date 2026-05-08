@@ -1,14 +1,12 @@
-import { Link, useLocation, useSearchParams, useNavigate } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useAppData } from "../context/AppContext";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const { isAuth, city, quantity, isVerified, fetchCurrentLocation } = useAppData();
+  const { isAuth, city, quantity, isVerified } = useAppData();
   const currLocation = useLocation();
 
   const isHomePage = currLocation.pathname === "/";
-  const isRestaurantPage = currLocation.pathname.startsWith("/restaurant/");
-  const isOrderPage = currLocation.pathname === "/orders" || currLocation.pathname.startsWith("/order/");
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("search") || "");
@@ -25,11 +23,8 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, [search]);
 
-  const navigate = useNavigate();
   const { user } = useAppData();
 
-  const isSellerPortal = currLocation.pathname.startsWith("/seller") || user?.role === "seller";
-  const isRiderPortal = user?.role === "rider";
   const isAuthPage = currLocation.pathname === "/login" || currLocation.pathname === "/select-role";
 
   if (isAuthPage) return null;

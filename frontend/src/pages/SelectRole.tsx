@@ -12,7 +12,6 @@ const SelectRole = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const roles: Role[] = ["customer", "rider", "seller"];
 
   const addRole = async () => {
     try {

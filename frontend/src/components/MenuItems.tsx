@@ -104,7 +104,7 @@ const MenuItems = ({ items, onItemDeleted, isSeller }: MenuItemsProps) => {
   };
 
   const getItemQty = (itemId: string) => {
-    const cartItem = cart.find((c: any) => (c.itemId?._id || c.itemId) === itemId);
+    const cartItem = cart?.find((c: any) => (c.itemId?._id || c.itemId) === itemId);
     return cartItem ? cartItem.quantity : 0;
   };
 

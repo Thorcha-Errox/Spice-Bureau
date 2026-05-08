@@ -148,6 +148,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                 fetchCurrentLocation,
                 cart,
                 fetchCart,
+                fetchUser,
                 quantity,
                 subTotal,
             }}

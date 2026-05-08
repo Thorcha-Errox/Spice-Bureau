@@ -48,7 +48,6 @@ const RiderDashboard = () => {
   const [incomingOrders, setIncomingOrders] = useState<string[]>([]);
   const [currentOrder, setCurrentOrder] = useState<IOrder | null>(null);
 
-  const [audioUnlocked, setAudioUnlocked] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(() => {
     return localStorage.getItem("rider_audio_enabled") !== "false"; // Default to true
   });
@@ -59,18 +58,6 @@ const RiderDashboard = () => {
     audioRef.current.preload = "auto";
   }, []);
 
-  const unlockAudio = async () => {
-    try {
-      if (!audioRef.current) return;
-      await audioRef.current.play();
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      setAudioUnlocked(true);
-      toast.success("Sound Enabled");
-    } catch (error) {
-      toast.error("Tap again to enable sound");
-    }
-  };
 
   useEffect(() => {
     if (!socket) return;
@@ -96,7 +83,7 @@ const RiderDashboard = () => {
     return () => {
       socket.off("order:available", onOrderAvailable);
     };
-  }, [socket, audioUnlocked, audioEnabled]);
+  }, [socket, audioEnabled]);
 
   const fetchStats = async () => {
     try {

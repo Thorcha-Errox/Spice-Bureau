@@ -6,10 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import type { ICart, IMenuItem, IRestaurant } from "../types";
 import toast from "react-hot-toast";
 import { BiCreditCard, BiLoader } from "react-icons/bi";
-import { loadStripe } from "@stripe/stripe-js";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 interface Address {
   _id: string;

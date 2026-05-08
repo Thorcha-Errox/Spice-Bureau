@@ -18,7 +18,7 @@ const ACTIVE_STATUSES = [
 ];
 
 const SellerDashboard = () => {
-  const { user, setIsVerified: setGlobalVerified } = useAppData();
+  const { setIsVerified: setGlobalVerified } = useAppData();
   const [restaurant, setRestaurant] = useState<IRestaurant | null>(null);
   const [orders, setOrders] = useState<IOrder[]>([]);
 
@@ -127,10 +127,6 @@ const SellerDashboard = () => {
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/login";
-  };
 
   if (loading) {
     return <LoadingSpinner fullScreen />;

@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { restaurantService } from "../main";
-import type { IMenuItem, IRestaurant } from "../types";
+import type { IMenuItem } from "../types";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 const MenuManagement = () => {
-  const [restaurant, setRestaurant] = useState<IRestaurant | null>(null);
   const [menuItems, setMenuItems] = useState<IMenuItem[]>([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -24,7 +23,6 @@ const MenuManagement = () => {
         return;
       }
 
-      setRestaurant(resData.restaurant);
 
       const itemsRes = await axios.get(`${restaurantService}/api/item/all/${resData.restaurant._id}`, {
         headers: { Authorization: `Bearer ${token}` },

@@ -33,6 +33,7 @@ export interface AppContextType {
   fetchCurrentLocation: () => void;
   cart: ICart[] | null;
   fetchCart: () => Promise<void>;
+  fetchUser: () => Promise<void>;
   subTotal: number;
   quantity: number;
 }
