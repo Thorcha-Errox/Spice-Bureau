@@ -12,7 +12,7 @@
 ## Gallery & Portals
 
 ### Customer Portal
-*The Customer Portal allows users to browse restaurants, manage their carts, and track active orders in real-time on an interactive map.*
+*The Customer Portal allows users to browse restaurants, manage their carts, and track active orders in real-time on an interactive map.* 
 <table>
   <tr>
     <td width="50%"><img src="frontend/src/assets/SpiceBureauCustomerDashboard.png" alt="Customer Dashboard Main" /></td>
@@ -32,7 +32,7 @@
 *A dedicated dashboard for restaurant owners to seamlessly manage menus, receive incoming orders, update order statuses, and track revenue.*
 <table>
   <tr>
-    <td width="50%"><img src="frontend/src/assets/SpiceBureauSellerPanel.png" alt="Seller Dashboard" /></td>
+    <td  width="50%"><img src="frontend/src/assets/SpiceBureauSellerPanel.png" alt="Seller Dashboard" /></td>
     <td width="50%"></td>
   </tr>
 </table>
