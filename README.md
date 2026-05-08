@@ -8,7 +8,6 @@
 
 **Spice Bureau 2.0** is a comprehensive, scalable food delivery platform that seamlessly connects customers, restaurant owners (sellers), delivery personnel (riders), and administrators. Built with a robust microservices architecture and a dynamic, responsive frontend, Spice Bureau aims to provide a premium user experience and efficient operational management for the food delivery industry.
 
----
 
 ## Gallery & Portals
 
@@ -60,7 +59,6 @@
   </tr>
 </table>
 
----
 
 ## Key Features
 
@@ -69,7 +67,6 @@
 - **Rider Portal**: Accept delivery requests, utilize real-time navigation and routing using Leaflet, update delivery statuses instantly, and manage earnings.
 - **Admin Portal**: Platform-wide oversight, comprehensive user management, restaurant approvals, and deep system analytics.
 
----
 
 ## Tech Stack & Architecture Decisions
 
@@ -101,7 +98,6 @@ Instead of a monolithic backend, Spice Bureau utilizes a **Microservices Archite
 5. **Realtime Service**: Dedicated WebSocket server for live order tracking, instant notifications, and chat.
 6. **Utils**: Shared configurations, common middlewares, and utility functions across all services.
 
----
 
 ## How to Run Locally
 
@@ -200,7 +196,6 @@ npm run dev
 
 *(Note: Ensure MongoDB and RabbitMQ are actively running before starting the backend services to prevent connection timeouts.)*
 
----
 
 ## Future Scope & Roadmap
 
@@ -213,7 +208,6 @@ While Spice Bureau 2.0 is fully functional, continuous improvement is in our DNA
 - **Mobile Applications**: Port the responsive web portals to native mobile applications for iOS and Android using React Native.
 - **Advanced Push Notifications**: Integrate sophisticated web and mobile push notifications for instant order and delivery status updates.
 
----
 
 ## Contributing
 Contributions, bug reports, and feature requests are highly welcome! 
@@ -222,5 +216,4 @@ If you'd like to contribute, please fork the repository and use a feature branch
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
----
 *Crafted with passion for the ultimate food delivery experience.*
