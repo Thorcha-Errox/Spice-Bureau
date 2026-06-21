@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# Spice Bureau - Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> The client-side application of the Spice Bureau 2.0 ecosystem. A high-performance, responsive portal built using React 19, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+This folder contains the complete Single Page Application (SPA) that acts as the frontend interface for all four roles: **Customers, Sellers (Restaurants), Riders, and Administrators**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Core Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **React 19 & TypeScript**: Provides a modern, type-safe, component-driven UI foundation.
+*   **Vite**: The build tool ensuring lightning-fast Hot Module Replacement (HMR) and optimized client-side asset compilation.
+*   **TailwindCSS 4.2**: The styling framework defining our layout, glassmorphic menus, buttons, animations, and custom theme parameters.
+*   **React Router DOM v7**: Handles declarative routing for all core portals.
+*   **Leaflet & React-Leaflet**: Powering live tracking on interactive maps for customers and routing/directions maps for riders.
+*   **Stripe & Razorpay Checkout Integration**: Secures checkout flows directly from the browser.
+*   **Google OAuth**: Enables fast, passwordless single-sign-on (SSO).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Directory Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+frontend/
+├── public/                 # Static assets (fonts, icons, and logo assets)
+├── src/
+│   ├── assets/             # Images, sounds (alert tones for riders/sellers)
+│   ├── components/         # Reusable UI component blocks (Navbar, Card, Loading states, Maps)
+│   ├── context/            # AppContext (Auth state, Cart state, Location) & SocketContext (WebSocket clients)
+│   ├── pages/              # Role-specific portal dashboard pages & layout views
+│   │   ├── Account.tsx / ProfileDetails.tsx     # Profile views
+│   │   ├── Address.tsx                          # Address management
+│   │   ├── Admin.tsx                            # Admin Control Panel
+│   │   ├── Cart.tsx / Checkout.tsx              # Order checkout workflow
+│   │   ├── Home.tsx / RestaurantPage.tsx        # Customer home and menus
+│   │   ├── RiderDashboard.tsx / RiderOrders.tsx # Rider delivery portals
+│   │   └── SellerDashboard.tsx / SellerOrders.tsx# Restaurant owner portals
+│   ├── App.tsx             # Main routing hub
+│   ├── main.tsx            # Service endpoint configuration & app bootstrap
+│   └── types.ts            # Common TypeScript interface definitions
+├── index.html              # HTML shell template
+├── package.json            # Scripts and devDependencies configurations
+└── tsconfig.json           # TypeScript compilation options
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Setup & Local Development
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Install Dependencies
+Navigate to the `frontend/` directory and run:
+```bash
+npm install
 ```
+
+### 2. Environment Configuration
+Create a `.env` file in this directory and populate your keys:
+```env
+VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+VITE_INTERNAL_SERVICE_KEY=your_internal_secret_key
+```
+
+### 3. Server Endpoint Configuration
+The microservice URLs are configured in `src/main.tsx`. 
+*   **Local Development**: To test against microservices running on your local machine, update the server variables to point to localhost ports:
+    ```typescript
+    export const authService = "http://localhost:5000";
+    export const restaurantService = "http://localhost:5001";
+    export const utilsService = "http://localhost:5002";
+    export const realtimeService = "http://localhost:5004";
+    export const riderService = "http://localhost:5005";
+    export const adminService = "http://localhost:5006";
+    ```
+*   **Production**: Ensure they point to your deployed backend endpoints (Render, etc.).
+
+### 4. Run Development Server
+Start the local server with hot reload:
+```bash
+npm run dev
+```
+The client dashboard will typically load at `http://localhost:5173`.
+
+### 5. Build for Production
+To bundle and optimize the application assets for deployment (Vercel, Netlify, etc.):
+```bash
+npm run build
+```
+The compiled, minified assets will be generated inside the `dist/` directory.
