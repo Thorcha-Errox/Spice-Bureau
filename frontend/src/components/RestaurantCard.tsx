@@ -54,7 +54,7 @@ const RestaurantCard = ({
       <div className="p-6 flex-1 flex flex-col">
         <div className="mb-4">
           <div className="flex justify-between items-start mb-1">
-            <h3 className="font-display-lg text-xl font-black italic tracking-tight text-on-surface truncate group-hover:text-primary transition-colors">
+            <h3 className="font-display-lg text-xl font-black italic tracking-tight text-on-surface truncate group-hover:text-primary transition-colors pr-2">
               {name}
             </h3>
           </div>
