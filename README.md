@@ -6,7 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-success?style=for-the-badge&logo=vercel)](https://spice-bureau-8bsg.vercel.app/) 
 
-**Spice Bureau ** is a comprehensive, scalable food delivery platform that seamlessly connects customers, restaurant owners (sellers), delivery personnel (riders), and administrators. Built with a robust microservices architecture and a dynamic, responsive frontend, Spice Bureau aims to provide a premium user experience and efficient operational management for the food delivery industry.
+**Spice Bureau** is a comprehensive, scalable food delivery platform that seamlessly connects customers, restaurant owners (sellers), delivery personnel (riders), and administrators. Built with a robust microservices architecture and a dynamic, responsive frontend, Spice Bureau aims to provide a premium user experience and efficient operational management for the food delivery industry.
 
 > [!IMPORTANT]
 > **Showcase & Testing Note**: Since this project acts as a prototype demonstrating the food delivery ecosystem for startups, restaurants have not been seeded globally. To see the restaurant cards, browse menus, and test the full checkout and rider flow, please search for or select **"Purnia, Bihar"** in the navbar's location search. Most test restaurants are configured in this area.
