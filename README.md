@@ -1,4 +1,4 @@
-# Spice Bureau 2.0
+# Spice Bureau 
 
 > A Modern, High-Performance Full-Stack Food Delivery Ecosystem.
 
@@ -6,7 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-success?style=for-the-badge&logo=vercel)](https://spice-bureau-8bsg.vercel.app/) 
 
-**Spice Bureau 2.0** is a comprehensive, scalable food delivery platform that seamlessly connects customers, restaurant owners (sellers), delivery personnel (riders), and administrators. Built with a robust microservices architecture and a dynamic, responsive frontend, Spice Bureau aims to provide a premium user experience and efficient operational management for the food delivery industry.
+**Spice Bureau ** is a comprehensive, scalable food delivery platform that seamlessly connects customers, restaurant owners (sellers), delivery personnel (riders), and administrators. Built with a robust microservices architecture and a dynamic, responsive frontend, Spice Bureau aims to provide a premium user experience and efficient operational management for the food delivery industry.
 
 > [!IMPORTANT]
 > **Showcase & Testing Note**: Since this project acts as a prototype demonstrating the food delivery ecosystem for startups, restaurants have not been seeded globally. To see the restaurant cards, browse menus, and test the full checkout and rider flow, please search for or select **"Purnia, Bihar"** in the navbar's location search. Most test restaurants are configured in this area.
@@ -109,7 +109,7 @@ Before you begin, ensure you have the following installed and configured on your
 - [MongoDB](https://www.mongodb.com/) (Local instance or MongoDB Atlas cluster)
 - [RabbitMQ](https://www.rabbitmq.com/) (Running locally or via Docker)
 - A **Stripe Account** (for payment gateway API keys)
-- A **Google Cloud Console Project** (for OAuth 2.0 credentials)
+- A **Google Cloud Console Project** (for OAuth  credentials)
 
 ### 1. Clone the Repository
 ```bash
@@ -201,7 +201,7 @@ npm run dev
 
 ## Future Scope & Roadmap
 
-While Spice Bureau 2.0 is fully functional, continuous improvement is in our DNA. Here are the upcoming features and technical enhancements planned for the future:
+While Spice Bureau  is fully functional, continuous improvement is in our DNA. Here are the upcoming features and technical enhancements planned for the future:
 
 - **Dockerization**: Containerize all microservices and the frontend using Docker and Docker Compose for a seamless, one-click local setup and streamlined deployment pipeline.
 - **Kubernetes Orchestration**: Implement K8s for robust auto-scaling, load balancing, and managing the microservices securely in a high-traffic production environment.
